@@ -49,7 +49,7 @@
         <div id="botaotopo">
           <a href="login">Login</a>
           <!-- <a href="http://wa.me/5514999999999?text=olá tudo bem hre href=" whats.html>Whatsapp</a> -->
-          <a href="cadastro" href="matricula.html">Matricule-se</a>
+          <a href="cadastro" href="matricula.html">Cadastre-se</a>
           <!-- href="formulario.html" -->
         </div>
       </header>
@@ -152,7 +152,7 @@
                 <div class="card-foto-legenda">
                   <div class="card-foto-preco">R$ 30,00</div>
                   <div id="botaoplano" class="card-foto-categoria">
-                    <a href="formulariomatricula.html.php" href="#">SEMANAL</a>
+                    <a href="{{ route("semanal") }}">SEMANAL</a>
                   </div>
                 </div>
               </div>
@@ -169,13 +169,13 @@
                 <div class="card-foto-legenda">
                   <div class="card-foto-preco">R$ 60,00</div>
                   <div id="botaoplano" class="card-foto-categoria">
-                    <a href="formulariomatricula2.html" href="#">MENSAL</a>
+                    <a href={{asset ("formulariomatricula2.html")}} href="#">MENSAL</a>
                   </div>
                 </div>
               </div>
 
               <div class="card-descricao"></div>
-            </div>
+            </div>  
             <!--PLAMNO MENSAL-->
 
             <!--PLANO ANUAL-->
@@ -185,7 +185,7 @@
                 <div class="card-foto-legenda">
                   <div class="card-foto-preco">R$ 300,00</div>
                   <div id="botaoplano" class="card-foto-categoria">
-                    <a href="formulariomatricula3.html">ANUAL</a>
+                    <a href={{ asset ("formulariomatricula3.html")}}>ANUAL</a>
                   </div>
                 </div>
               </div>
@@ -235,7 +235,7 @@
         <div class="copyright">
           <p>
             &copy; 2023 - todos os direitos são reservados | Desenvolvido por
-            Jhown | Leleo | Gil .
+            | Leleo | Gil .
           </p>
         </div>
       </div>

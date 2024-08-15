@@ -16,6 +16,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;700&display=swap"
         rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+    </script>
 
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
@@ -61,19 +70,19 @@
 
             <fieldset class="containerplanos">
                 <p>
-                    <label for="Name">Nome</label>
-                    <input type="text" name="nome" id="name">
-                </p>
-                <p>
                     <label for="email">E-mail</label>
                     <input type="email" name="email" id="email">
                 </p>
+                <p>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                </p>
 
-                <div id="mensagem" class="card-foto-preco">
-                    R$ 30,00
-                    <div id="botaoenviar">
-                        <a href="#">Enviar</a>
-                    </div>
+                R$ 30,00
+                {{-- <div class="btn btn-primary" id="botaoenviar"> --}}
+                <a class="btn btn-primary w-25">Enviar</a>
+                <div id="mensagem" class="card-foto-preco row justify-content-center">
+                    {{-- </div> --}}
                 </div>
             </fieldset>
         </div>
@@ -123,21 +132,21 @@
 
 
     <?php
-// Verifica se o formulário foi submetido
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Coleta os dados do formulário
-    $nome = $_POST["nome"];
-    $email = $_POST["email"];
-    $senha = $_POST["senha"];
-
-    // Realiza o cadastro do usuário no banco de dados (neste exemplo, estamos apenas exibindo os dados)
-    echo "Nome: " . $nome . "<br>";
-    echo "E-mail: " . $email . "<br>";
-    echo "Senha: " . $senha . "<br>";
-
-    // Aqui você pode adicionar a lógica para inserir os dados em um banco de dados
-}
-?>
+    // Verifica se o formulário foi submetido
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // Coleta os dados do formulário
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+    
+        // Realiza o cadastro do usuário no banco de dados (neste exemplo, estamos apenas exibindo os dados)
+        echo 'Nome: ' . $nome . '<br>';
+        echo 'E-mail: ' . $email . '<br>';
+        echo 'Senha: ' . $senha . '<br>';
+    
+        // Aqui você pode adicionar a lógica para inserir os dados em um banco de dados
+    }
+    ?>
 
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"

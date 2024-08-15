@@ -25,7 +25,15 @@ class SiteController extends Controller
     public function cadastro()
     {
         return view('cadastro');
+
     }
+
+public function plano()
+{
+    return view('formulariomatricula');
+    
+}
+
 }
 
 
