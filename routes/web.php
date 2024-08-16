@@ -13,3 +13,5 @@ Route::get('/plano',[SiteController::class,"plano"])->name("semanal");
 
 
 
+
+
