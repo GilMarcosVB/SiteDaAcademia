@@ -38,7 +38,6 @@
 <body>
 
 
-
     <header id="cabecalho" class="container">
 
         <div id="botao-menu-mobile">
@@ -64,6 +63,30 @@
                 <!--<a href="#secao1" href="index.html:matricula.html">Matricule-se</a>-->
                 <!-- href="formulario.html" -->
             </div>
+
+            <div id="botao-menu-mobile">
+                <div id="botao-menu-mobile">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <div id="logotipo">
+                    <img src="img/logo.png" alt="" height="80">
+                </div>
+
+                <nav id="menu">
+                    <ul>
+                        <!-- <li><a href="javascript:;">Categorias</a></li>  -->
+                        <li><a href="index.html">INICIO</a></li>
+                        <!-- <li><a href="Contato.html:;">Contato</a></li> -->
+                    </ul>
+                </nav>
+
+                <div id="botaotopo">
+
+                    <a href="http://wa.me/5514999999999?text=olá tudo bem hre href=" whats.html>whatsapp</a>
+                    <!--<a href="#secao1" href="index.html:matricula.html">Matricule-se</a>-->
+                    <!-- href="formulario.html" -->
+                </div>
 
 
     </header>

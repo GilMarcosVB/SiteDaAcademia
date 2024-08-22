@@ -48,7 +48,7 @@
             </div>
 
             <div id="logotipo">
-                <img src="img/logo.png" alt="" height="80">
+                <img src="img/logo.png" alt="" height="80">   
             </div>
 
             <nav id="menu">
@@ -66,6 +66,12 @@
                 <!-- href="formulario.html" -->
             </div>
 
+<style>
+    .email{
+
+        font-size: 25px;
+    }
+</style>
 
     </header>
 
@@ -73,17 +79,31 @@
     <main class="texto">
 
         <!-- <form class="texto" action="processar_cadastro.php" method="POST"> -->
-        <div class="fundoplanos">
+        <div class="fundoplanoss">
             <h1>Login</h1>
-            <form action="login.php" method="post">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required><br><br>
 
+            <form  action="login.php" method="post">
+                <label  for="email">Email:</label>
+                <input  type="email" id="email" name="email" required><br><br>
+                <label  for="password">Senha:</label>
+                <input  type="password" id="password" name="password" required><br><br>
+                
+                
                 <br>
+                
                 <button type="button" class="btn btn-primary">Login</button>
+                {{-- <img src="../img/fundoplanos3.jpg" alt=""> --}}
                 {{-- <button type="#" id="botaoenviar" value= "Login"> Login</button> --}}
+
+                <style>
+                    body {
+                        background-image: url('../img/fundoplanos3.jpg');
+                        background-size: cover; /* Ajusta a imagem para cobrir a tela inteira */
+                        background-repeat: no-repeat; /* Impede a repetição da imagem */
+                        background-position: center; /* Centraliza a imagem */
+                    }
+                </style>
+
 
             </form>
         </div>
