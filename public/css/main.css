@@ -437,6 +437,15 @@ body {
     }
 
 
+    
+    .logohorario {
+        border-radius: 10px;
+        background-image: url('../img/fundohorario.jpg');
+        background-size: cover; /* Ajusta a imagem para cobrir a tela inteira */
+        background-repeat: no-repeat; /* Impede a repetição da imagem */
+        background-position: center; /* Centraliza a imagem */
+    }
+
 
 
 

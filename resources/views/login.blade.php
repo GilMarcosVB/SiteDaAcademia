@@ -98,7 +98,6 @@
                 <style>
                     body {
                         background-image: url('../img/fundoplanos3.jpg');
-                        background-size: cover; /* Ajusta a imagem para cobrir a tela inteira */
                         background-repeat: no-repeat; /* Impede a repetição da imagem */
                         background-position: center; /* Centraliza a imagem */
                     }
