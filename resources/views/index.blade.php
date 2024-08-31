@@ -30,13 +30,15 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
 
     <link rel="stylesheet" href="css/main.css" />
+    
 </head>
 
 <body>
+    
     <header id="cabecalho" class="container">
         <div id="botao-menu-mobile">
             <i class="fa-solid fa-bars"></i>
-        </div>
+        </div>  
 
         <div id="logotipo">
             <img src="img/logo.png" alt="" height="80" />
@@ -117,11 +119,11 @@
                 </div>
             </section>
         </div>
-
+        
 
         <div class="blackgcinza">
             <section id="secao-categoria2" class="container">
-                <h1 class="text-center"><i class="bi bi-clock"></i>Horário de Funcionamento<i class="bi bi-clock"></i></h1>
+                <h1 class="text-center" class=".text-info"><i class="bi bi-clock"></i>Horário de Funcionamento<i class="bi bi-clock"></i></h1>
                 <h2 class="text-center">Seg a Sex
                     <br>
                     5h - 0h
