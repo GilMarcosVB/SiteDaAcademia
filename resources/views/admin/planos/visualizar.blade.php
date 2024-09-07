@@ -14,6 +14,10 @@
             <td>{{ $plano->nome_plano }}</td>
         </tr>
         <tr>
+            <th>Imagem</th>
+            <td>{{ $plano->imagem}}</td>
+        </tr>
+        <tr>
             <th>Duração</th>
             <td>{{ $plano->duracao }}</td>
         </tr>

@@ -13,7 +13,7 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('plano.update', ['id' => $plano->id]) }}" method="POST">
+    <form action="{{ route('plano.update', ['id' => $plano->id]) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="mb-3">
@@ -25,6 +25,11 @@
             <label for="duracao" class="form-label">Duração</label>
             <input type="text" name="duracao" class="form-control" id="duracao" placeholder="Duração"
                 value="{{ old('duracao', $plano->duracao) }}">
+        </div>
+        <div class="mb-3">
+            <label for="imagem" class="form-label">Imagem</label>
+            <input type="file" name="imagem" class="form-control" id="imagem" placeholder="Seu Imagem"
+                value="{{ old('imagem', $plano->imagem) }}">
         </div>
         <div class="mb-3">
             <label for="preco" class="form-label">Preço</label>

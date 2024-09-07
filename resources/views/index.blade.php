@@ -19,7 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;700&display=swap"
         rel="stylesheet" />
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
@@ -30,15 +30,15 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
 
     <link rel="stylesheet" href="css/main.css" />
-    
+
 </head>
 
 <body>
-    
+
     <header id="cabecalho" class="container">
         <div id="botao-menu-mobile">
             <i class="fa-solid fa-bars"></i>
-        </div>  
+        </div>
 
         <div id="logotipo">
             <img src="img/logo.png" alt="" height="80" />
@@ -114,16 +114,17 @@
                         <img src="img/imgacademia2.png" alt="#" />
                     </div>
                     <div class="item">
-                        <img src="img/imgacademia3.png" alt="#" />
+                        <img src="img/imgacademia4.png" alt="#" />
                     </div>
                 </div>
             </section>
         </div>
-        
+
 
         <div class="blackgcinza">
             <section id="secao-categoria2" class="container">
-                <h1 class="text-center" class=".text-info"><i class="bi bi-clock"></i>Horário de Funcionamento<i class="bi bi-clock"></i></h1>
+                <h1 class="text-center" class=".text-info"><i class="bi bi-clock"></i>Horário de Funcionamento<i
+                        class="bi bi-clock"></i></h1>
                 <h2 class="text-center">Seg a Sex
                     <br>
                     5h - 0h
@@ -180,25 +181,33 @@
                     </div>
                 </div>
 
+
                 <div class="lista-card-servicos">
                     <!--PLANO SEMANAL-->
-                    <div class="card-servicos">
-                        <div class="card-foto">
-                            <img src="img/planosemanal.png" alt="Plano Semanal" />
-                            <div class="card-foto-legenda">
-                                <div class="card-foto-preco">R$ 30,00</div>
-                                <div id="botaoplano" class="card-foto-categoria">
-                                    <a href="{{ route('semanal') }}">SEMANAL</a>
+                    @foreach ($planos as $plano)
+
+                        <div class="card-servicos">
+                            <div class="card-foto">
+                                <img src="{{asset("/storage/" . $plano->imagem)}}" alt="Plano Semanal" />
+                            
+                                <div class="card-foto-legenda">
+                                    <div class="card-foto-preco"> R$ {{ number_format($plano->preco, 2, ',', '.') }}</div>
+
+                                    <div id="botaoplano" class="card-foto-categoria">
+                                        <a href="asset {{'duracao'}}">{{ $plano->nome_plano}}</a>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="card-descricao"></div>
                         </div>
-                        <div class="card-descricao"></div>
-                    </div>
+                    @endforeach
+
+
                     <!--PLANO SEMANAL-->
 
                     <!--PLANO MENSAL-->
 
-                    <div class="card-servicos">
+                    {{-- <div class="card-servicos">
                         <div class="card-foto">
                             <img src="img/planomensal.jpg" alt="Plano Mensal" />
 
@@ -230,7 +239,7 @@
                     <!--PLANO ANUAL-->
                 </div>
             </section>
-        </div>
+        </div> --}}
     </main>
 
     <footer id="rodape">

@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layouts.admin')
 @section('conteudo')
     <div class="d-flex justify-content-between mt-3">
         <h2>Cadastrar Planos</h2>
@@ -16,25 +16,27 @@
     @endif
 
 
-    <form action="{{ route('plano.store') }}" method="POST">
+    <form action="{{ route('plano.store') }}" method="POST" enctype="multipart/form-data"> 
         @csrf
         <div class="mb-3">
-            <label for="titulo" class="form-label">Plano</label>
-            <input type="text" name="plano" class="form-control" id="plano" placeholder="Seu Titulo"
-                value="{{ old('plano') }}">
+            <label for="nome_plano" class="form-label">Plano</label>
+            <input type="text" name="nome_plano" class="form-control" id="nome_plano" placeholder="Seu Plano"
+                value="{{ old('nome_plano') }}">
         </div>
         <div class="mb-3">
             <label for="imagem" class="form-label">Imagem</label>
             <input type="file" name="imagem" class="form-control" id="imagem" placeholder="Seu Imagem"
                 value="{{ old('imagem') }}">
         </div>
-
-
         <div class="mb-3">
-            <label for="descricao" class="form-label">Descrição</label>
-            <textarea class="form-control" name="descricao" id="descricao" cols="30" rows="10">
-                {{ old('descricao') }}
-            </textarea>
+            <label for="duracao" class="form-label">Duração</label>
+            <input type="text" name="duracao" class="form-control" id="duracao" placeholder="Duração"
+                value="{{ old('duracao') }}">
+        </div>
+        <div class="mb-3">
+            <label for="preco" class="form-label">Preço</label>
+            <input type="text" name="preco" class="form-control" id="preco" placeholder="Preço"
+                value="{{ old('preco') }}">
         </div>
 
         <button type="submit" class="btn btn-primary">Salvar</button>

@@ -6,6 +6,8 @@ abstract class Controller
 {
 
     public function plano(){
-        return view('admin.index');
+        return view('admin.index', compact('id'));
+
+
     }
 }

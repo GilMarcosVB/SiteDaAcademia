@@ -25,6 +25,7 @@
             <tr>
                 <th>ID</th>
                 <th>Nome Do Plano</th>
+                <th>Imagem</th>
                 <th>Duração</th>
                 <th>Preço</th>
                 
@@ -36,6 +37,7 @@
                 <tr>
                     <td>{{ $plano->id }}</td>
                     <td>{{ $plano->nome_plano }}</td>
+                    <td>{{ $plano->imagem }}</td>
                     <td>{{ $plano->duracao}}</td>
                     <td>{{ $plano->preco }}</td>
                     <td>

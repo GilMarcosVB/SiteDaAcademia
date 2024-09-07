@@ -12,5 +12,6 @@ class Plano extends Model
         'nome_plano',
         'duracao',
         'preco',
+        'imagem'
     ];
 }

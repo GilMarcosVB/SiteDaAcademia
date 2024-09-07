@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Plano;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
     public function index()
     {
-    return view ('index');  
+        $planos = Plano::all();
+        return view('index', compact('planos'));
+    
 }
 
     public function sobrenos()

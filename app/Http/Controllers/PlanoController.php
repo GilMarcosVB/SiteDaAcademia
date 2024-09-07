@@ -21,26 +21,38 @@ class PlanoController extends Controller
     public function create()
     {
         return view('admin.planos.cadastrar');
+        
     }
 
     public function store(Request $request)
     {
-
+        // Validação do formulário, incluindo o campo de imagem
         $request->validate([
-            'titulo' => 'required',
+            'nome_plano' => 'required',
+            'duracao' => 'required',
             'preco' => 'required',
-            
+            'imagem' => 'required', // Validação da imagem
         ]);
-
-        plano::create([
-            'titulo' => $request->titulo,
-            'preco' => $request->descricao,
-          
-        ]);
-
-        return redirect()->route('plano.index')->with('sucesso', 'Plano cadastrado com sucesso!');
+    
+        // Processo de upload da imagem
+        if ($request->hasFile('imagem')) {
+            // Salvar a imagem na pasta storage/app/public/images
+            $imagePath = $request->file('imagem')->store('imagem', 'public');
+    
+            // Criar o plano no banco de dados, incluindo o caminho da imagem
+            plano::create([
+                'nome_plano' => $request->nome_plano,
+                'duracao' => $request->duracao,
+                'preco' => $request->preco,
+                'imagem' => $imagePath, // Caminho da imagem armazenada na storage
+            ]);
+    
+            return redirect()->route('plano.index')->with('sucesso', 'Plano cadastrado com sucesso!');
+        } else {
+            return back()->with('erro', 'O upload da imagem falhou.');
+        }
     }
-
+    
     public function show(string $id)
     {
         $plano = Plano::findOrFail($id);
@@ -54,24 +66,37 @@ class PlanoController extends Controller
     }
 
     public function update(Request $request, string $id)
-    {
-        $request->validate([
-            'nome_plano' => 'required',
-            'duracao' => 'required',
-            'preco' => 'required',
-        ]);
+{
+    // Validação do formulário, incluindo o campo de imagem (opcional)
+    $request->validate([
+        'nome_plano' => 'required',
+        'duracao' => 'required',
+        'preco' => 'required',
+        'imagem' => 'nullable', // A imagem é opcional no update
+    ]);
+    $plano = Plano::findOrFail($id);
 
-        $plano = Plano::findOrFail($id);
-
-        $plano->update([
-            'nome_plano' => $request->nome_plano,
-            'duracao' => $request->duracao,
-            'preco' => $request->preco,
-           
-        ]);
-
-        return redirect()->route('plano.index')->with('sucesso','Plano atualizado com sucesso!!!');
+    // Verifica se uma nova imagem foi carregada
+    if ($request->hasFile('imagem')) {
+        
+        // Salva a nova imagem na pasta storage/app/public/imagem
+        $imagePath = $request->file('imagem')->store('imagem', 'public');
+    } else {
+        // Se nenhuma nova imagem for carregada, mantém a imagem antiga
+        $imagePath = $plano->imagem;
     }
+
+    // Atualiza o plano no banco de dados, incluindo o caminho da nova imagem, se for o caso
+    $plano->update([
+        'nome_plano' => $request->nome_plano,
+        'duracao' => $request->duracao,
+        'preco' => $request->preco,
+        'imagem' => $imagePath, // Atualiza o caminho da imagem
+    ]);
+
+    
+    return redirect()->route('plano.index')->with('sucesso', 'Plano atualizado com sucesso!');
+}
 
     public function destroy(string $id)
     {
