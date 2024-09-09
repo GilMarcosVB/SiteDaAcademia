@@ -38,7 +38,29 @@
 
 <body>
 
+    <header id="cabecalho" class="container">
 
+        <div id="botao-menu-mobile">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div id="logotipo">
+            <a href= "/">
+            <img  src="img/logo.png" alt="" height="80">
+            </a>
+        </div>
+
+        <div id="botaotopo">
+
+            <a href="http://wa.me/5514999999999?text=olá tudo bem hre href=" whats.html>Whatsapp</a>
+            <!--<a href="#secao1" href="index.html:matricula.html">Matricule-se</a>-->
+        </div>
+
+        <!-- href="formulario.html" -->
+        </div>
+
+
+    </header>
 
     <header id="cabecalho" class="container">
 
@@ -48,7 +70,7 @@
             </div>
 
             <div id="logotipo">
-                <img src="img/logo.png" alt="" height="80">   
+                <img src="img/logo.png" alt="" height="80">
             </div>
 
             <nav id="menu">
@@ -66,12 +88,12 @@
                 <!-- href="formulario.html" -->
             </div>
 
-<style>
-    .email{
+            <style>
+                .email {
 
-        font-size: 25px;
-    }
-</style>
+                    font-size: 25px;
+                }
+            </style>
 
     </header>
 
@@ -82,24 +104,87 @@
         <div class="fundoplanoss">
             <h1>Login</h1>
 
-            <form  action="login.php" method="post">
-                <label  for="email">Email:</label>
-                <input  type="email" id="email" name="email" required><br><br>
-                <label  for="password">Senha:</label>
-                <input  type="password" id="password" name="password" required><br><br>
-                
-                
+            <form action="login.php" method="post">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required><br><br>
+
+                <a href="#" class="esqueceu-senha">Esqueceu sua senha?</a>
+
+
                 <br>
-                
+
                 <button type="button" class="btn btn-primary">Login</button>
                 {{-- <img src="../img/fundoplanos3.jpg" alt=""> --}}
                 {{-- <button type="#" id="botaoenviar" value= "Login"> Login</button> --}}
 
                 <style>
-                    body {
-                        background-image: url('../img/fundoplanos3.jpg');
-                        background-repeat: no-repeat; /* Impede a repetição da imagem */
-                        background-position: center; /* Centraliza a imagem */
+                    /* Estilo para o formulário de login */
+                    form {
+                        width: 300px;
+                        margin: 0 auto;
+                        padding: 20px;
+                        border: 1px solid #ccc;
+                        border-radius: 10px;
+                        background-color: #f0f0f0;
+                        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+                        font-family: Arial, sans-serif;
+                    }
+
+                    /* Estilo para os rótulos (labels) */
+                    label {
+                        display: block;
+                        margin-bottom: 8px;
+                        font-weight: bold;
+                        color: #333;
+                    }
+
+                    /* Estilo para os campos de entrada (input) */
+                    input[type="email"],
+                    input[type="password"] {
+                        width: 100%;
+                        padding: 10px;
+                        margin-bottom: 15px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        box-sizing: border-box;
+                    }
+
+                    /* Estilo para o botão de envio */
+                    input[type="submit"] {
+                        width: 100%;
+                        padding: 10px;
+                        background-color: #007bff;
+                        border: none;
+                        border-radius: 5px;
+                        color: white;
+                        font-weight: bold;
+                        cursor: pointer;
+                        transition: background-color 0.3s;
+                    }
+
+                    input[type="submit"]:hover {
+                        background-color: #45a049;
+                    }
+
+                    /* Estilo para o espaçamento entre os campos */
+                    br {
+                        line-height: 1.5;
+                    }
+
+                    .esqueceu-senha {
+                        display: block;
+                        margin-bottom: 15px;
+                        text-align: center;
+                        font-size: 12px;
+                        color: #007bff;
+                        text-decoration: none;
+                        transition: color 0.3s;
+                    }
+
+                    .esqueceu-senha:hover {
+                        color: #0056b3;
                     }
                 </style>
 
