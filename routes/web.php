@@ -8,7 +8,7 @@ use App\Http\Controllers\SiteController;
 Route::get('/',[SiteController::class,"index"]);
 Route::get('/sobre-nos',[SiteController::class,"sobreNos"]);
 Route::get('/login',[SiteController::class,"login"]);
-Route::get('/cadastro',[SiteController::class,"cadastro"]);
+Route::get('/cadastro',[SiteController::class,"cadastro.store"]);
 
 Route::get('/plano',[SiteController::class,"plano"])->name("semanal");
 

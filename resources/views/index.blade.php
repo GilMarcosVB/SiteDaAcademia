@@ -19,7 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;700&display=swap"
         rel="stylesheet" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
@@ -123,9 +123,9 @@
 
         <div class="blackgcinza">
             <section id="secao-categoria2" class="container">
-                <h1 class="text-center" class=".text-info"><i class="bi bi-clock"></i>Horário de Funcionamento<i
+                <h1 class="mapa" class=".text-info"><i class="bi bi-clock"></i>Horário de Funcionamento<i
                         class="bi bi-clock"></i></h1>
-                <h2 class="text-center">Seg a Sex
+                <h2 class="mapa">Seg a Sex
                     <br>
                     5h - 0h
                     <br>
@@ -137,20 +137,6 @@
                     <br>
                     8h - 14h
                 </h2>
-                {{-- <img class="logohorario" src="../img/fundohorario.jpg"> --}}
-                <style>
-                    #secao-categoria2 {
-
-                        width: 1100px;
-                        height: 300px;
-                        background-image: url('../img/fundohorario.jpg');
-                        border-radius: 30px;
-                        background-repeat: no-repeat;
-                        /* Impede a repetição da imagem */
-                        background-position: center;
-                        /* Centraliza a imagem */
-                    }
-                </style>
             </section>
         </div>
 
@@ -163,7 +149,7 @@
             <div class="mapa">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2291.072594404045!2d-49.926737760359224!3d-22.253670763735375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bfda17efe46d27%3A0x24e49387ff67eae7!2sR.%20Angelina%20Balco%20da%20Silva%2C%20418%20-%20Nucleo%20Hab.%20Nova%20Marilia%2C%20Mar%C3%ADlia%20-%20SP%2C%2017522-580!5e1!3m2!1spt-BR!2sbr!4v1701209761245!5m2!1spt-BR!2sbr"
-                    width="800" height="400" style="border: 5px" allowfullscreen="" loading="lazy"
+                    width="900" height="400" style="border-radius: 10px;"  loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
@@ -185,16 +171,16 @@
                 <div class="lista-card-servicos">
                     <!--PLANO SEMANAL-->
                     @foreach ($planos as $plano)
-
                         <div class="card-servicos">
                             <div class="card-foto">
-                                <img src="{{asset("/storage/" . $plano->imagem)}}" alt="Plano Semanal" />
-                            
+                                <img src="{{ asset('/storage/' . $plano->imagem) }}" alt="Plano Semanal" />
+
                                 <div class="card-foto-legenda">
-                                    <div class="card-foto-preco"> R$ {{ number_format($plano->preco, 2, ',', '.') }}</div>
+                                    <div class="card-foto-preco"> R$ {{ number_format($plano->preco, 2, ',', '.') }}
+                                    </div>
 
                                     <div id="botaoplano" class="card-foto-categoria">
-                                        <a href="asset {{'duracao'}}">{{ $plano->nome_plano}}</a>
+                                        <a href="asset {{ 'duracao' }}">{{ $plano->nome_plano }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -202,44 +188,6 @@
                         </div>
                     @endforeach
 
-
-                    <!--PLANO SEMANAL-->
-
-                    <!--PLANO MENSAL-->
-
-                    {{-- <div class="card-servicos">
-                        <div class="card-foto">
-                            <img src="img/planomensal.jpg" alt="Plano Mensal" />
-
-                            <div class="card-foto-legenda">
-                                <div class="card-foto-preco">R$ 60,00</div>
-                                <div id="botaoplano" class="card-foto-categoria">
-                                    <a href={{ asset('formulariomatricula2.html') }} href="#">MENSAL</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-descricao"></div>
-                    </div>
-                    <!--PLAMNO MENSAL-->
-
-                    <!--PLANO ANUAL-->
-                    <div class="card-servicos">
-                        <div class="card-foto">
-                            <img src="img/planoanual.jpg" alt="Plano Anual" />
-                            <div class="card-foto-legenda">
-                                <div class="card-foto-preco">R$ 300,00</div>
-                                <div id="botaoplano" class="card-foto-categoria">
-                                    <a href={{ asset('formulariomatricula3.html') }}>ANUAL</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-descricao"></div>
-                    </div>
-                    <!--PLANO ANUAL-->
-                </div>
-            </section>
-        </div> --}}
     </main>
 
     <footer id="rodape">

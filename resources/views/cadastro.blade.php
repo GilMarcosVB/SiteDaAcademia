@@ -51,17 +51,16 @@
 
             <nav id="menu">
                 <ul>
-                    <!-- <li><a href="javascript:;">Categorias</a></li>  -->
+
                     <li><a href="index.html">INICIO</a></li>
-                    <!-- <li><a href="Contato.html:;">Contato</a></li> -->
+
                 </ul>
             </nav>
 
             <div id="botaotopo">
 
                 <a href="http://wa.me/5514999999999?text=olá tudo bem hre href=" whats.html>whatsapp</a>
-                <!--<a href="#secao1" href="index.html:matricula.html">Matricule-se</a>-->
-                <!-- href="formulario.html" -->
+
             </div>
 
             <div id="botao-menu-mobile">
@@ -80,12 +79,10 @@
                         <!-- <li><a href="Contato.html:;">Contato</a></li> -->
                     </ul>
                 </nav>
-
                 <div id="botaotopo">
 
                     <a href="http://wa.me/5514999999999?text=olá tudo bem hre href=" whats.html>whatsapp</a>
-                    <!--<a href="#secao1" href="index.html:matricula.html">Matricule-se</a>-->
-                    <!-- href="formulario.html" -->
+
                 </div>
 
 
@@ -94,53 +91,64 @@
 
     <main class="texto">
 
-        <!-- <form class="texto" action="processar_cadastro.php" method="POST"> -->
+
         <div class="fundoplanos">
             <h1>Cadastro de Usuário</h1>
+
+            @if (session('sucesso'))
+                <p style="color: green;">{{ session('sucesso') }}</p>
+            @endif
+
             <div class="OrdemTamanho">
-                <label for="nome">Nome:</label><br>
-                <input type="text" id="nome" name="nome" required><br><br>
+                <form action="{{ route('cadastro.store') }}" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label for="nome">Nome:</label><br>
+                        <input type="text" id="nome" name="nome" required
+                            value="{{ old('nome') }}"><br><br>
+                    </div>
 
-                <label for="email">E-mail:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label><br>
+                        <input type="email" id="email" name="email" required
+                            value="{{ old('email') }}"><br><br>
+                    </div>
 
-                <label for="senha">Senha:</label><br>
+                    <div class="form-group">
+                        <label for="senha">Senha:</label><br>
+                        <input type="password" id="senha" name="senha" required><br><br>
+                    </div>
 
-                <input type="password" id="senha" name="senha" required><br><br>
+                    <div class="form-group">
+                        <label for="data">Data de Nascimento:</label><br>
+                        <input type="date" id="data" name="data_nascimento" required
+                            value="{{ old('data_nascimento') }}"><br><br>
+                    </div>
 
-                <label for="date">Data de Nascimento:</label><br>
-                <input type="date" id="nome" name="nome" required><br><br>
+                    <div class="form-group">
+                        <label for="genero">Gênero:</label><br>
+                        <select name="genero" id="genero" required>
+                            <option value="Masculino" {{ old('genero') == 'Masculino' ? 'selected' : '' }}>Masculino
+                            </option>
+                            <option value="Feminino" {{ old('genero') == 'Feminino' ? 'selected' : '' }}>Feminino
+                            </option>
+                            <option value="Outros" {{ old('genero') == 'Outros' ? 'selected' : '' }}>Outros</option>
+                            <option value="Prefiro não dizer"
+                                {{ old('genero') == 'Prefiro não dizer' ? 'selected' : '' }}>Prefiro não dizer</option>
+                        </select><br><br>
+                    </div>
 
-                <label for="genero">Genero:</label><br>
-                <select name="" id="genero">
-                    <option value="genero">Masculino</option>
-                    <option value="genero">Feminino</option>
-                    {{-- <option value="genero">Bissexual</option> --}}
-                    <option value="genero">Prefiro não dizer</option>
-                </select><br>
-                <br>
-                <button type="button" class="btn btn-primary">Cadastrar</button>
-                {{-- <input type="submit" id="botaoenviar" value="Cadastrar"> --}}
-
-
-
-                </header>
+                    <button type="submit">Cadastrar</button>
+                </form>
             </div>
+
+
+
+
+            </header>
+        </div>
         </div>
     </main>
-    <?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // Coleta os dados do formulário
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-    
-        // Realiza o cadastro do usuário no banco de dados (neste exemplo, estamos apenas exibindo os dados)
-        echo 'Nome: ' . $nome . '<br>';
-        echo 'E-mail: ' . $email . '<br>';
-        echo 'Senha: ' . $senha . '<br>';
-    }
-    ?>
 
 </body>
 

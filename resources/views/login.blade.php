@@ -46,7 +46,7 @@
 
         <div id="logotipo">
             <a href= "/">
-            <img  src="img/logo.png" alt="" height="80">
+                <img src="img/logo.png" alt="" height="80">
             </a>
         </div>
 
@@ -74,18 +74,16 @@
             </div>
 
             <nav id="menu">
-                <ul>
-                    <!-- <li><a href="javascript:;">Categorias</a></li>  -->
-                    <li><a href="index.html">INICIO</a></li>
-                    <!-- <li><a href="Contato.html:;">Contato</a></li> -->
+
+                <li><a href="index.html">INICIO</a></li>
+
                 </ul>
             </nav>
 
             <div id="botaotopo">
 
                 <a href="http://wa.me/5514999999999?text=olá tudo bem hre href=" whats.html>whatsapp</a>
-                <!--<a href="#secao1" href="index.html:matricula.html">Matricule-se</a>-->
-                <!-- href="formulario.html" -->
+
             </div>
 
             <style>
@@ -99,8 +97,6 @@
 
 
     <main class="texto">
-
-        <!-- <form class="texto" action="processar_cadastro.php" method="POST"> -->
         <div class="fundoplanoss">
             <h1>Login</h1>
 
@@ -120,7 +116,7 @@
                 {{-- <button type="#" id="botaoenviar" value= "Login"> Login</button> --}}
 
                 <style>
-                    /* Estilo para o formulário de login */
+                  
                     form {
                         width: 300px;
                         margin: 0 auto;
