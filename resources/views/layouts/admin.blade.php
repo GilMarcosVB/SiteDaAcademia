@@ -42,7 +42,7 @@
         <h2>Menu</h2>
         <a href="#">Início</a>
         <a href="{{ route('plano.index') }}">Planos</a>
-        <a href="#">Perfil</a>
+        <a href="{{ route('usuario.index') }}">Usuários</a>
         <a href="#">Configurações</a>
         <a href="#">Sair</a>
     </div>

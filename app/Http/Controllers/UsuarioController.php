@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -11,7 +13,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        $usuarios = User::all();
+        return view('admin.usuarios.index', compact('usuarios'));
     }
 
     /**
@@ -19,7 +22,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.usuarios.cadastrar');
     }
 
     /**
@@ -27,7 +30,26 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email|unique:usuarios,email',
+            'password' => 'required|string|min:8',
+            'cpf' => 'required|string',
+            'celular' => 'required|string',
+            'data_nascimento' => 'required|date',
+        ]);
+
+        // Salvar o usuário no banco de dados
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->senha), // Criptografar a senha
+            'cpf' => $request->cpf,
+            'celular' => $request->celular,
+            'data_nascimento' => $request->data_nascimento,
+        ]);
+
+        return redirect()->back()->with('sucesso', 'Usuário cadastrado com sucesso!');
     }
 
     /**
@@ -35,7 +57,8 @@ class UsuarioController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $usuario = User::findOrFail($id);
+        return view('admin.usuarios.visualizar', compact('usuario'));
     }
 
     /**

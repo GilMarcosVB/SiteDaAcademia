@@ -100,7 +100,7 @@
             @endif
 
             <div class="OrdemTamanho">
-                <form action="{{ route('cadastro.store') }}" method="POST">
+                <form action="{{ route('site.create') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="nome">Nome:</label><br>

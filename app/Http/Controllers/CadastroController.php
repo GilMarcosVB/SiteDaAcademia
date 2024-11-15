@@ -53,7 +53,7 @@ class CadastroController extends Controller
      */
     public function show(string $id)
     {
-        //
+        
     }
 
     /**
