@@ -28,6 +28,7 @@
                 <th>Email</th>
                 <th>Celular</th>
                 <th>Data Nascimento</th>
+                <th>CPF</th>
             </tr>
         </thead>
         <tbody>
@@ -39,6 +40,7 @@
                     <td>{{ $usuario->email }}</td>
                     <td>{{ $usuario->celular}}</td>
                     <td>{{ $usuario->data_nascimento }}</td>
+                    <td>{{ $usuario->cpf }}</td>
                     <td>
                         <a href="{{ route('usuario.show', ['id' => $usuario->id]) }}" class="btn btn-primary">Visualizar</a>
                         <a href="{{ route('usuario.edit', ['id' => $usuario->id]) }}" class="btn btn-secondary">Editar</a>

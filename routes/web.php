@@ -30,7 +30,9 @@ Route::get('/admin/usuario', [UsuarioController::class, "index"])->name("usuario
 Route::get('/admin/usuario/cadastrar', [UsuarioController::class, "create"])->name("usuario.create");
 Route::get('/admin/usuario/editar/{id}', [UsuarioController::class, "edit"])->name("usuario.edit");
 Route::get('/admin/usuario/visualizar/{id}', [UsuarioController::class, "show"])->name("usuario.show");
+
 Route::post('/admin/usuario/cadastrar/salvar', [UsuarioController::class, "store"])->name("usuario.store");
+
 Route::put('/admin/usuario/atualizar/{id}', [UsuarioController::class, "update"])->name("usuario.update");
 Route::delete('/admin/usuario/deletar/{id}', [UsuarioController::class, "destroy"])->name("usuario.destroy");
 

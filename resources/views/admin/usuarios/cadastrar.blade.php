@@ -4,6 +4,7 @@
         <h2>Cadastrar Usuários</h2>
     </div>
     <hr>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     @if ($errors->any())
         <div class="boxError alert alert-danger">
@@ -16,7 +17,7 @@
     @endif
 
 
-    <form action="{{ route('usuario.store') }}" method="POST" enctype="multipart/form-data"> 
+    <form action="{{ route('usuario.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Nome do usuário</label>
@@ -40,7 +41,7 @@
         <div class="mb-3">
             <label for="celular" class="form-label">Celular</label>
             <input type="text" name="celular" class="form-control" id="celular" placeholder="(00) 0000-0000"
-                value="{{ old('celular') }}">
+            onkeyup="phone(event)" value="{{ old('celular') }}">
         </div>
         <div class="mb-3">
             <label for="data_nascimento" class="form-label">Data de nascimiento</label>
@@ -51,4 +52,38 @@
         <button type="submit" class="btn btn-primary">Salvar</button>
         <a href="{{ route('usuario.index') }}" class="btn btn-secondary">Cancelar</a>
     </form>
+
+    <script>
+        $(document).ready(function() {
+            $('#cpf').on('input', function() {
+                this.value = formatCpf(this.value);
+            })
+        });
+
+        function formatCpf(v) {
+            v = v.replace(/\D/g, ""); // Remove tudo que não é dígito
+            v = v.replace(/(\d{3})(\d)/, "$1.$2"); // Coloca ponto entre o terceiro e o quarto dígitos
+            v = v.replace(/(\d{3})(\d)/, "$1.$2"); // Coloca ponto entre o sexto e o sétimo dígitos
+            v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2"); // Coloca hífen entre o nono e o décimo dígitos
+            v = v.substring(0, 14); // Limita a 14 caracteres, também tem q limitar no campo input
+
+            return v;
+        }
+
+        /* formatação da máscara do campo telefone com regex */
+
+        const phone = (event) => {
+            let input = event.target
+            input.value = phoneMask(input.value)
+        }
+
+        const phoneMask = (value) => {
+            // se o valor de 'value' for falso, retorne uma string vazia
+            if (!value) return ""
+            value = value.replace(/\D/g, '')
+            value = value.replace(/(\d{2})(\d)/, "($1) $2")
+            value = value.replace(/(\d)(\d{4})$/, "$1-$2")
+            return value
+        }
+    </script>
 @endsection

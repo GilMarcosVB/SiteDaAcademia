@@ -13,30 +13,40 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('plano.update', ['id' => $plano->id]) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('usuario.update', ['id' => $usuario->id]) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="mb-3">
-            <label for="nome_plano" class="form-label">Nome</label>
-            <input type="text" name="nome_plano" class="form-control" id="nome_plano" placeholder="Nome"
-                value="{{ old('nome_plano', $plano->nome_plano) }}">
+            <label for="name" class="form-label">Nome do usuário</label>
+            <input type="text" name="name" class="form-control" id="name" placeholder="Seu Usuário"
+                value="{{ old('name' , $usuario->name) }}">
         </div>
         <div class="mb-3">
-            <label for="duracao" class="form-label">Duração</label>
-            <input type="text" name="duracao" class="form-control" id="duracao" placeholder="Duração"
-                value="{{ old('duracao', $plano->duracao) }}">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="text" name="email" class="form-control" id="email" placeholder="E-mail"
+                value="{{ old('email' , $usuario->email) }}">
         </div>
         <div class="mb-3">
-            <label for="imagem" class="form-label">Imagem</label>
-            <input type="file" name="imagem" class="form-control" id="imagem" placeholder="Seu Imagem"
-                value="{{ old('imagem', $plano->imagem) }}">
+            <label for="password" class="form-label">Senha</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Senha...">
         </div>
         <div class="mb-3">
-            <label for="preco" class="form-label">Preço</label>
-            <input type="text" name="preco" class="form-control" id="preco" placeholder="Preço"
-                value="{{ old('preco', $plano->preco) }}">
+            <label for="cpf" class="form-label">CPF</label>
+            <input type="text" name="cpf" class="form-control" id="cpf" placeholder="CPF"
+                value="{{ old('cpf', $usuario->cpf) }}"  >
+        </div>  
+        <div class="mb-3">
+            <label for="celular" class="form-label">Celular</label>
+            <input type="text" name="celular" class="form-control" id="celular" placeholder="(00) 0000-0000"
+                value="{{ old('celular', $usuario->celular) }}">
         </div>
+        <div class="mb-3">
+            <label for="data_nascimento" class="form-label">Data de nascimiento</label>
+            <input type="date" name="data_nascimento" class="form-control" id="data_nascimento" placeholder="Preço"
+                value="{{ old('data_nascimento', $usuario->data_nascimento) }}">
+        </div>
+
         <button type="submit" class="btn btn-primary">Salvar</button>
-        <a href="{{ route('plano.index') }}" class="btn btn-secondary">Cancelar</a>
+        <a href="{{ route('usuario.index') }}" class="btn btn-secondary">Cancelar</a>
     </form>
 @endsection

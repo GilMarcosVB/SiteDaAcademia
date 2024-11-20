@@ -7,11 +7,11 @@
     <table class="table table-striped">
         <tr>
             <th>ID</th>
-            <td>{{ $plano->id }}</td>
+            <td>{{ $usuario->name }}</td>
         </tr>
         <tr>
             <th>Nome</th>
-            <td>{{ $plano->nome_plano }}</td>
+            <td>{{ $usuario->nome_plano }}</td>
         </tr>
         <tr>
             <th>Imagem</th>
