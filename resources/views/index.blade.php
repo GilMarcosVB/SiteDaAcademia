@@ -173,7 +173,7 @@
                     @foreach ($planos as $plano)
                         <div class="card-servicos">
                             <div class="card-foto">
-                                <img src="{{ asset($plano->imagem) }}" alt="Plano Semanal" />
+                                <img src="{{ asset('storage/'.$plano->imagem) }}" alt="Plano Semanal" />
 
                                 <div class="card-foto-legenda">
                                     <div class="card-foto-preco"> R$ {{ number_format($plano->preco, 2, ',', '.') }}
