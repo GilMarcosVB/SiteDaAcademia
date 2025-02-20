@@ -14,7 +14,7 @@ class PlanoApiController extends Controller
         try {
             $planos = Plano::all();
             $planos = $planos->map(function($plano){
-                $plano->imagem = asset("storage/".$plano->imagem);
+                $plano->imagem = "http://10.56.46.34/sitedaacademia/public/storage/".$plano->imagem;
                 return $plano;
             });
             return response()->json($planos, 200);
